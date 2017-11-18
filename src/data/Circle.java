@@ -1,40 +1,30 @@
 package data;
 
-import java.util.Scanner;
-
-public class Circle extends Shape {
+public class Circle extends Shape  {
     
     private double radius;
 
     public double getRadius() {
         return radius;
     }
-
     public void setRadius(double radius) {
+        
         this.radius = radius;
     }
-
-    public Circle(Scanner scanner) {
-        System.out.println("Ingrese el valor del radio: ");
-        this.radius = scanner.nextDouble();
-        System.out.println();
+    public Circle(double radius) {
+        this.radius = radius;
     }
-    
-    
-    
     @Override
-    public void areaCalculation(){
-        System.out.println(Math.PI*(radius*radius));
+    public void calculator(){
+        super.setArea(Math.PI*Math.pow(radius,2));
+        super.setPerimeter(2*Math.PI*radius);
     }
-
     @Override
-    
     public String toString() {
-        return "Soy un circulo. ";
+        return super.toString().concat("Circulo, Radio= ").concat(Double.toString(radius));
     }
     
-    @Override
-    public void perimeterCalculation(){
-        System.out.println(2*Math.PI*radius);
-    }
+  
+
+   
 }

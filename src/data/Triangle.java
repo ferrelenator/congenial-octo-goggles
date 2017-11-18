@@ -1,10 +1,10 @@
 package data;
 
 
-public class Triangle extends Shape {
-    
+public abstract class Triangle extends Shape {
+
     @Override
     public String toString() {
-        return "Soy un Triangulo. ";
+        return super.toString().concat("Triangulo ");
     }
 }

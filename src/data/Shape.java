@@ -14,11 +14,23 @@ implementadas en código como tales usando la palabra reservada abstract.
 
 public abstract class Shape {
     
-    public void perimeterCalculation(){};
-    
-    public void areaCalculation(){};
-    
-    public String toString (){
-        return "Soy una figura";
+    private double area,perimeter;
+    public abstract void calculator();
+
+    @Override
+    public String toString(){
+    return "Figura ";
+}
+    public double getArea() {
+        return area;
+    }
+    public void setArea(double area) {
+        this.area = area;
+    }
+    public double getPerimeter() {
+        return perimeter;
+    }
+    public void setPerimeter(double perimeter) {
+        this.perimeter = perimeter;
     }
 }

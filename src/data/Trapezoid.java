@@ -1,82 +1,26 @@
 package data;
 
-import java.util.Scanner;
-
 public class Trapezoid extends Quadrilateral{
-    private double majorBase;
-    private double minorBase;
-    private double height;
-    private double sideA;
-    private double sideB;
+    private double baseA, baseB, sideA, sideB,angle;
 
-    public double getMajorBase() {
-        return majorBase;
-    }
 
-    public void setMajorBase(double majorBase) {
-        this.majorBase = majorBase;
-    }
-
-    public double getMinorBase() {
-        return minorBase;
-    }
-
-    public void setMinorBase(double minorBase) {
-        this.minorBase = minorBase;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public double getSideA() {
-        return sideA;
-    }
-
-    public void setSideA(double sideA) {
-        this.sideA = sideA;
-    }
-
-    public double getSideB() {
-        return sideB;
-    }
-
-    public void setSideB(double sideB) {
-        this.sideB = sideB;
-    }
-
-    public Trapezoid(Scanner scanner,Scanner scanner2, Scanner scanner3, Scanner scanner4,Scanner scanner5) {
-        System.out.println("Ingrese el valor de la base mayor: ");
-        this.majorBase = scanner.nextDouble();
-        System.out.println("Ingrese el valor de la base menor: ");
-        this.minorBase = scanner2.nextDouble();
-        System.out.println("Ingrese el valor de la altura: ");
-        this.height = scanner3.nextDouble();
-        System.out.println("Ingrese el valor del lado derecho: ");
-        this.sideA = scanner4.nextDouble();
-        System.out.println("Ingrese el valor del lado izquierdo: ");
-        this.sideB = scanner5.nextDouble();
-        System.out.println();
-    }
-
-    
-    
+    public Trapezoid(double[] lines) {
+        this.baseA= lines[0];
+        this.baseB= lines[1];
+        this.sideA= lines[2];
+        this.sideB= lines[3];
+        this.angle=lines[4];
+    }    
     @Override
     public String toString(){
-        return super.toString()+" y más especificamente un trapecio. ";
-    }
-    
+        return super.toString().concat("Trapecio, Base A= ").concat(Double.toString(baseA)).concat(", BaseB= ").concat(Double.toString(baseB)).concat(", LadoA= ").concat(Double.toString(sideA)).concat(", LadoB= ").concat(Double.toString(sideB)).concat(", Angulo entre Base A y Lado A= ").concat(Double.toString(angle)) ;
+    } 
     @Override
-    public void areaCalculation(){
-        System.out.println((height*(majorBase+minorBase))/2);
-    }
-
-    @Override
-    public void perimeterCalculation(){
-        System.out.println(majorBase+minorBase+sideB+sideA);
-    }
+    public void calculator() {        
+        double a1= 0.5*baseA*sideA*Math.sin(angle);
+        double d1=Math.sqrt(Math.pow(baseA,2)+Math.pow(sideA,2)-(2*baseA*sideA*Math.cos(angle)));
+        double s= (sideB+baseB+d1)/2;
+        double a2=Math.sqrt(s*(s-sideB)*(s-baseB)*(s-d1));
+        super.setArea(a1+a2);
+        super.setPerimeter(baseA+baseB+sideB+sideA);  }
 }

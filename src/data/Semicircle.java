@@ -5,42 +5,21 @@
  */
 package data;
 
-import java.util.Scanner;
-
-/**
- *
- * @author ferrelenator
- */
 public class Semicircle extends Circle {
-    private double diameter;
-
-    public double getDiameter() {
-        return diameter;
+    
+    public Semicircle(double radius) {
+        super(radius);
     }
 
-    public void setDiameter(double diameter) {
-        this.diameter = diameter;
+    @Override
+    public void calculator(){
+        super.calculator();
+        super.setArea(super.getArea()/2);
+        super.setPerimeter(super.getPerimeter()/2);
     }
-
-    public Semicircle(Scanner scanner) {
-        super(scanner);
-        System.out.println("Ingrese el valor del diametro: ");
-        this.diameter = scanner.nextDouble();
-        System.out.println();
-    }
-
+    
     @Override
     public String toString() {
-        return super.toString()+"y más especificamente, un semicirculo. ";
-    }
-    
-    @Override 
-    public void areaCalculation(){
-        System.out.println((Math.PI*(((diameter)/2)*((diameter)/2)))/2);
-    }
-    
-    @Override
-    public void perimeterCalculation(){
-        System.out.println(Math.PI*(diameter/2));
+        return super.toString()+"Semicirculo ";
     }
 }
