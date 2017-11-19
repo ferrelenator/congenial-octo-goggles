@@ -1,7 +1,7 @@
 package business;
 import data.*;
 import java.util.ArrayList;
-import ui.UI;
+import ui.UIText;
 
 /*Debe crearse una clase ShapeCalculatorTest, esta será la encargada de
 manejar la lógica de negocio, además esta clase:
@@ -22,7 +22,7 @@ public class ShapeCalculatorTest {
         listFigure= new ArrayList<>();
         boolean exit = false;
         while(!exit){
-           switch(UI.Menu()){
+           switch(UIText.Menu()){
                 case 1:
                    calculator();
                 break;
@@ -43,47 +43,47 @@ public class ShapeCalculatorTest {
     
     public static void calculator() {
         if(!listFigure.isEmpty()){
-        int x=UI.figures(listFigure);
+        int x=UIText.figures(listFigure);
         listFigure.get(x).calculator();
-        UI.printShapeAreaPerimeter(listFigure.get(x));}else{newFigure();}
+        UIText.printShapeAreaPerimeter(listFigure.get(x));}else{newFigure();}
     
     }
     public static void newFigure(){
-         switch(UI.newfigure()){
+         switch(UIText.newfigure()){
                     case 1:
-                        listFigure.add(new Circle(UI.newCircle()));
+                        listFigure.add(new Circle(UIText.newCircle()));
                         break;
                     case 2:
-                        listFigure.add(new Semicircle(UI.newCircle()));
+                        listFigure.add(new Semicircle(UIText.newCircle()));
                         break;
                     case 3:
-                        listFigure.add(new Square(UI.newSquare()));
+                        listFigure.add(new Square(UIText.newSquare()));
                         break;
                     case 4:
-                        listFigure.add(new Rectangle(UI.newRecatangle()));
+                        listFigure.add(new Rectangle(UIText.newRecatangle()));
                         break;
                     case 5:
-                        listFigure.add(new Trapezoid(UI.newTrapezoid()));
+                        listFigure.add(new Trapezoid(UIText.newTrapezoid()));
                         break;
                     case 6:                      
-                        listFigure.add(new Equilateral(UI.newEquilateral()));
+                        listFigure.add(new Equilateral(UIText.newEquilateral()));
                         break;
                     case 7:
-                        listFigure.add(new Isoceles(UI.newIsoceles()));
+                        listFigure.add(new Isoceles(UIText.newIsoceles()));
                         break;
                     case 8:
-                        listFigure.add(new Scalene(UI.newScaleno()));
+                        listFigure.add(new Scalene(UIText.newScaleno()));
                         break;
                     case 9:
                         break;    
                     default:
-                        ui.UI.errorMsg();       
+                        ui.UIText.errorMsg();       
             }
     }
 
 
     private static void deleteFigure() {
-        int x=UI.deletefigure(listFigure);
+        int x=UIText.deletefigure(listFigure);
         listFigure.remove(x);
     }
 }
