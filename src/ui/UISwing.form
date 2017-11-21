@@ -350,6 +350,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField1"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Tdata1KeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Ldata1">
           <Properties>
@@ -360,6 +363,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField1"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Tdata2KeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Ldata2">
           <Properties>
@@ -375,6 +381,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField1"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Tdata3KeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Ldata4">
           <Properties>
@@ -385,6 +394,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField1"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Tdata4KeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Ldata5">
           <Properties>
@@ -395,6 +407,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField1"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Tdata5KeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Lperi">
           <Properties>

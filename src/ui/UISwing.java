@@ -285,24 +285,49 @@ public class UISwing extends javax.swing.JFrame implements UI {
         jLabel2.setText("Figuras disonibles");
 
         Tdata1.setText("jTextField1");
+        Tdata1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Tdata1KeyTyped(evt);
+            }
+        });
 
         Ldata1.setText("jLabel3");
 
         Tdata2.setText("jTextField1");
+        Tdata2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Tdata2KeyTyped(evt);
+            }
+        });
 
         Ldata2.setText("jLabel3");
 
         Ldata3.setText("jLabel3");
 
         Tdata3.setText("jTextField1");
+        Tdata3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Tdata3KeyTyped(evt);
+            }
+        });
 
         Ldata4.setText("jLabel3");
 
         Tdata4.setText("jTextField1");
+        Tdata4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Tdata4KeyTyped(evt);
+            }
+        });
 
         Ldata5.setText("jLabel3");
 
         Tdata5.setText("jTextField1");
+        Tdata5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Tdata5KeyTyped(evt);
+            }
+        });
 
         Lperi.setText("AQUI SE MUESTRA");
 
@@ -678,6 +703,41 @@ public class UISwing extends javax.swing.JFrame implements UI {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
 System.exit(0);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void Tdata1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Tdata1KeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_Tdata1KeyTyped
+
+    private void Tdata2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Tdata2KeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_Tdata2KeyTyped
+
+    private void Tdata3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Tdata3KeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_Tdata3KeyTyped
+
+    private void Tdata4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Tdata4KeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_Tdata4KeyTyped
+
+    private void Tdata5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Tdata5KeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_Tdata5KeyTyped
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bcal;
