@@ -2,6 +2,7 @@ package ui;
 
 import data.*;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*Debe crearse una clase UIText, esta será la encargada de
@@ -26,7 +27,7 @@ public class UIText implements UI{
         System.out.println("Perimetro= " + shape.getPerimeter() +System.lineSeparator());
     }
     @Override
-    public int Menu(){
+    public void Menu(){
         System.out.println("[------------- Calculadora Areas y perimetros ----------------]");
         System.out.println("|       Menu principal:                                       |");   
         System.out.println("|       1.Calcular Area y perimetro de una figura guardada.   |");
@@ -35,16 +36,16 @@ public class UIText implements UI{
         System.out.println("|       4.Salir del programa.                                 |");
         System.out.println("-------------------------------------------------------------\n");
         System.out.println("Seleccione una Opcion: ");
-        return reader.nextInt();
+    
     }
     @Override
     public int figures(ArrayList<Shape> figure){
-         System.out.println("Seleccione una figura para calcular el Area y el perimetro: "+System.lineSeparator());
+        boolean ok=true;
+        int j=0;
+        System.out.println("Figuras Actuales: "+System.lineSeparator());
         for (Shape shape : figure) {
             System.out.println("ID: "+figure.indexOf(shape)+System.lineSeparator()+shape.toString());
-        }
-        return reader.nextInt();
-    }
+         } return reader.nextInt();  }
     @Override
     public int newfigure(){
         System.out.println("Eliga una nueva figura");

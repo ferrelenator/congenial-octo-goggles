@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public interface UI {
     public void printShapeAreaPerimeter(Shape shape);
-    public int Menu();
+    public void Menu();
     public int figures(ArrayList<Shape> figure);
     public int newfigure();
     public int deletefigure(ArrayList<Shape> figure);

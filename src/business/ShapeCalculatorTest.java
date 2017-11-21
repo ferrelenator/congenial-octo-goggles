@@ -22,7 +22,8 @@ public class ShapeCalculatorTest {
     
     private static void selectUI(String[] args) {
         if (args.length == 0) {
-            ui = new UISwing();
+          //  ui = new UISwing();
+          ui=new UIText();
         } else if (args[0].equals("text")) {
             ui = new UIText();
         } else {
@@ -35,9 +36,11 @@ public class ShapeCalculatorTest {
         selectUI(args);
         
         listFigure= new ArrayList<>();
+       
         boolean exit = false;
         while(!exit){
-           switch(ui.Menu()){
+            ui.Menu();
+           switch(ui.figures(listFigure)){
                 case 1:
                    calculator();
                 break;
@@ -59,9 +62,11 @@ public class ShapeCalculatorTest {
     public static void calculator() {
         if(!listFigure.isEmpty()){
         int x=ui.figures(listFigure);
+        try{
         listFigure.get(x).calculator();
-        ui.printShapeAreaPerimeter(listFigure.get(x));}else{newFigure();}
-    
+        ui.printShapeAreaPerimeter(listFigure.get(x));
+        }catch(IndexOutOfBoundsException ex){System.out.println("Digite solo los indices de las figuras");}
+        }
     }
     public static void newFigure(){
          switch(ui.newfigure()){
