@@ -14,40 +14,49 @@ o Debe ter un método encargado de la impresión del área y el perímetro de
 la forma, este método debe tener la firma :
 printShapeAreaPerimeter ( Shape )
 o NOTA: Ninguna otra clase debe realizar la lectura o impresión de datos.
-*/
+ */
+public class UIText implements UI {
 
-public class UIText implements UI{
-    
     private static Scanner reader = new Scanner(System.in);
-    
+
     @Override
-    public void printShapeAreaPerimeter(Shape shape){
-        System.out.println(shape.toString()+ System.lineSeparator() );
-        System.out.println("Area= "+ shape.getArea() +System.lineSeparator() );
-        System.out.println("Perimetro= " + shape.getPerimeter() +System.lineSeparator());
+    public void printShapeAreaPerimeter(Shape shape) {
+        System.out.println(shape.toString() + System.lineSeparator());
+        System.out.println("Area= " + shape.getArea() + System.lineSeparator());
+        System.out.println("Perimetro= " + shape.getPerimeter() + System.lineSeparator());
     }
+
     @Override
-    public void Menu(){
+    public void Menu() {
         System.out.println("[------------- Calculadora Areas y perimetros ----------------]");
-        System.out.println("|       Menu principal:                                       |");   
+        System.out.println("|       Menu principal:                                       |");
         System.out.println("|       1.Calcular Area y perimetro de una figura guardada.   |");
         System.out.println("|       2.Añadir figura.                                      |");
         System.out.println("|       3.Eliminar figura.                                    |");
         System.out.println("|       4.Salir del programa.                                 |");
         System.out.println("-------------------------------------------------------------\n");
         System.out.println("Seleccione una Opcion: ");
-    
+
     }
+
     @Override
-    public int figures(ArrayList<Shape> figure){
-        boolean ok=true;
-        int j=0;
-        System.out.println("Figuras Actuales: "+System.lineSeparator());
+    public int figures(ArrayList<Shape> figure) {
+        boolean ok = true;
+        int j = 0;
+        System.out.println("Figuras Actuales: " + System.lineSeparator());
         for (Shape shape : figure) {
-            System.out.println("ID: "+figure.indexOf(shape)+System.lineSeparator()+shape.toString());
-         } return reader.nextInt();  }
+            System.out.println("ID: " + figure.indexOf(shape) + System.lineSeparator() + shape.toString());
+        }
+        while (!reader.hasNextInt()) {
+        reader.next();
+        System.out.println("Sorry, that is an invalid input.");
+        
+    }
+    return reader.nextInt();
+    }
+
     @Override
-    public int newfigure(){
+    public int newfigure() {
         System.out.println("Eliga una nueva figura");
         System.out.println(" 1. Circulo");
         System.out.println(" 2. Semicirculo");
@@ -58,88 +67,118 @@ public class UIText implements UI{
         System.out.println(" 7. Triangulo Isoceles");
         System.out.println(" 8. Triangulo Escaleno");
         System.out.println(" 9. Cancelar");
-        return reader.nextInt();
+        while (!reader.hasNextInt()) reader.next();
+        int num2 = reader.nextInt();
+        return num2;
     }
+
     @Override
-    public int deletefigure(ArrayList<Shape> figure){
+    public int deletefigure(ArrayList<Shape> figure) {
         System.out.println("Que figura desea eliminar: ");
         for (Shape shape : figure) {
-            System.out.println("ID: "+figure.indexOf(shape)+System.lineSeparator()+shape.toString());
+            System.out.println("ID: " + figure.indexOf(shape) + System.lineSeparator() + shape.toString());
         }
-        return reader.nextInt();
+        while (!reader.hasNextInt()) reader.next();
+        int num2 = reader.nextInt();
+        return num2;
     }
+
     @Override
-    public double newCircle(){
+    public double newCircle() {
         System.out.println("Digite el valor del radio: ");
-        return reader.nextDouble();
-       }
+        while (!reader.hasNextDouble()) reader.next();
+        double num2 = reader.nextDouble();
+        return num2;
+    }
+
     @Override
-    public double newEquilateral(){
+    public double newEquilateral() {
         double x;
         System.out.println("Digite el valor de la base: ");
-        x=reader.nextDouble();
-    return x;
+        while (!reader.hasNextDouble()) reader.next();
+        x = reader.nextDouble();
+        return x;
     }
+
     @Override
-    public double[] newIsoceles(){
-        double[] x =new double[3];
+    public double[] newIsoceles() {
+        double[] x = new double[3];
         double xa;
         System.out.println("Digite el valor de la base: ");
-        xa=reader.nextDouble();
-        x[0]=xa;
+        while (!reader.hasNextDouble()) reader.next();
+        xa = reader.nextDouble();
+        x[0] = xa;
         System.out.println("Digite el valor de los lados : ");
-        xa=reader.nextDouble();
-        x[1]=xa;x[2]=xa;
-    return x;
-}
+        while (!reader.hasNextDouble()) reader.next();
+        xa = reader.nextDouble();
+        x[1] = xa;
+        x[2] = xa;
+        return x;
+    }
+
     @Override
-    public double[] newScaleno(){
-        double[] x =new double[3];
+    public double[] newScaleno() {
+        double[] x = new double[3];
         System.out.println("Digite el punto A");
-        x[0]=reader.nextDouble();
+        while (!reader.hasNextDouble()) reader.next();
+        x[0] = reader.nextDouble();
         System.out.println("Digite el punto B");
-        x[1]=reader.nextDouble();
+        while (!reader.hasNextDouble()) reader.next();
+        x[1] = reader.nextDouble();
         System.out.println("Digite el punto C");
-        x[2]=reader.nextDouble();
-    return x;
-}
+        while (!reader.hasNextDouble()) reader.next();
+        x[2] = reader.nextDouble();
+        return x;
+    }
+
     @Override
-    public double newSquare(){
+    public double newSquare() {
 
         double x;
         System.out.println("Ingrese el valor de la arista: ");
-        x=reader.nextDouble();    
-    return x;
-}
+        while (!reader.hasNextDouble()) reader.next();
+        x = reader.nextDouble();
+        return x;
+    }
+
     @Override
-    public double[] newRecatangle(){
-        double[] x =new double[2];
+    public double[] newRecatangle() {
+        double[] x = new double[2];
         double xa;
         System.out.println("Ingrese el valor de la base: ");
-        xa=reader.nextDouble();
-        x[0]=xa;
+        while (!reader.hasNextDouble()) reader.next();
+        xa = reader.nextDouble();
+        x[0] = xa;
         System.out.println("Ingrese el valor de la altura : ");
-        xa=reader.nextDouble();
-        x[1]=xa;   
-    return x;
-}
+        while (!reader.hasNextDouble()) reader.next();
+        xa = reader.nextDouble();
+        x[1] = xa;
+        return x;
+    }
+
     @Override
-    public double[] newTrapezoid(){
-        double[] x =new double[5];
+    public double[] newTrapezoid() {
+        double[] x = new double[5];
         System.out.println("Digite la base A");
-        x[0]=reader.nextDouble();
+        while (!reader.hasNextDouble()) reader.next();
+        x[0] = reader.nextDouble();
         System.out.println("Digite la base B");
-        x[1]=reader.nextDouble();
+        while (!reader.hasNextDouble()) reader.next();
+        x[1] = reader.nextDouble();
         System.out.println("Digite el lado A");
-        x[2]=reader.nextDouble();
+        while (!reader.hasNextDouble()) reader.next();
+        x[2] = reader.nextDouble();
         System.out.println("Digite el lado B");
-        x[3]=reader.nextDouble();
+        while (!reader.hasNextDouble()) reader.next();
+        x[3] = reader.nextDouble();
         System.out.println("Digite el angulo entre la base A y el lado A");
-        x[4]=reader.nextDouble();          
-    return x;   
-}    
+        while (!reader.hasNextDouble()) reader.next();
+        x[4] = reader.nextDouble();
+        return x;
+    }
+
     @Override
-    public void errorMsg(){
+    public void errorMsg() {
         System.out.println("Selecciona una opcion entre 1 y 9 porfavor.");
     }
 }
