@@ -22,8 +22,7 @@ public class ShapeCalculatorTest {
     
     private static void selectUI(String[] args) {
         if (args.length == 0) {
-          //  ui = new UISwing();
-          ui=new UIText();
+           ui = new UISwing();
         } else if (args[0].equals("text")) {
             ui = new UIText();
         } else {
